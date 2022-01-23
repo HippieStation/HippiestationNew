@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>(global) - </title>
+</head>
+<body>
+<header>
+    <a href="index.html"></a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="global.html#proc">Proc Details</a></header>
+<main>
+<h1>(global)
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/(unknown)">
+        <img src="git.png" width="16" height="16" title="(unknown)"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="global.html#proc/cmp_crafting_req_priority">cmp_crafting_req_priority</a></th><td>Sorts crafting recipe requirements before the crafting recipe is inserted into GLOB.crafting_recipes</td></tr>
+            <tr><th><a href="global.html#proc/considered_exiled">considered_exiled</a></th><td>Exiled check</td></tr>
+            <tr><th><a href="global.html#proc/find_record">find_record</a></th><td>Returns datum/data/record</td></tr>
+            <tr><th><a href="global.html#proc/get_bbox_of_atoms">get_bbox_of_atoms</a></th><td>Get a bounding box of a list of atoms.</td></tr>
+            <tr><th><a href="global.html#proc/init_crafting_recipes">init_crafting_recipes</a></th><td>Inits the crafting recipe list, sorting crafting recipe requirements in the process.</td></tr>
+            <tr><th><a href="global.html#proc/log_tgui">log_tgui</a></th><td>Appends a tgui-related log entry. All arguments are optional.</td></tr>
+            <tr><th><a href="global.html#proc/make_datum_references_lists">make_datum_references_lists</a></th><td>Initial Building</td></tr>
+            <tr><th><a href="global.html#proc/md5asfile">md5asfile</a></th><td>Save file as an external file then md5 it.
+Used because md5ing files stored in the rsc sometimes gives incorrect md5 results.</td></tr>
+            <tr><th><a href="global.html#proc/md5filepath">md5filepath</a></th><td>Returns the md5 of a file at a given path.</td></tr>
+            <tr><th><a href="global.html#proc/pick_n_take">pick_n_take</a></th><td>Pick a random element from the list and remove it from the list.</td></tr>
+            <tr><th><a href="global.html#proc/recursive_organ_check">recursive_organ_check</a></th><td></td></tr>
+            <tr><th><a href="global.html#proc/simple_network_name_fix">simple_network_name_fix</a></th><td>Network name should be all caps and no punctuation except for _ and . between domains
+This does a quick an dirty fix to a network name to make sure it works</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/cmp_crafting_req_priority"><aside class="declaration">proc </aside>cmp_crafting_req_priority<aside>(A, B) 
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/code/__HELPERS/cmp.dm#L141">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;cmp.dm 141"/></a></aside>
+        </h3>
+        <p>Sorts crafting recipe requirements before the crafting recipe is inserted into GLOB.crafting_recipes</p>
+<p>Prioritises [/datum/reagent] to ensure reagent requirements are always processed first when crafting.
+This prevents any reagent_containers from being consumed before the reagents they contain, which can
+lead to runtimes and item duplication when it happens.</p><h3 id="proc/considered_exiled"><aside class="declaration">proc </aside>considered_exiled<aside>(/datum/mind/M) 
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/code/__HELPERS/game.dm#L327">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;game.dm 327"/></a></aside>
+        </h3>
+        <p>Exiled check</p>
+<p>Checks if the current body of the mind has an exile implant and is currently in
+an away mission. Returns FALSE if any of those conditions aren't met.</p><h3 id="proc/find_record"><aside class="declaration">proc </aside>find_record<aside>(field, value, /list/L) 
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/code/__HELPERS/_lists.dm#L367">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 367"/></a></aside>
+        </h3>
+        <p>Returns datum/data/record</p><h3 id="proc/get_bbox_of_atoms"><aside class="declaration">proc </aside>get_bbox_of_atoms<aside>(/list/atoms) 
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/code/__HELPERS/game.dm#L64">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;game.dm 64"/></a></aside>
+        </h3>
+        <p>Get a bounding box of a list of atoms.</p>
+<p>Arguments:</p>
+<ul>
+<li>atoms - List of atoms. Can accept output of view() and range() procs.</li>
+</ul>
+<p>Returns: list(x1, y1, x2, y2)</p><h3 id="proc/init_crafting_recipes"><aside class="declaration">proc </aside>init_crafting_recipes<aside>(/list/crafting_recipes) 
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/code/__HELPERS/global_lists.dm#L57">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;global_lists.dm 57"/></a></aside>
+        </h3>
+        <p>Inits the crafting recipe list, sorting crafting recipe requirements in the process.</p><h3 id="proc/log_tgui"><aside class="declaration">proc </aside>log_tgui<aside>(user, message, context, /datum/tgui_window/window, /datum/src_object) 
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/code/__HELPERS/_logging.dm#L242">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_logging.dm 242"/></a></aside>
+        </h3>
+        <p>Appends a tgui-related log entry. All arguments are optional.</p><h3 id="proc/make_datum_references_lists"><aside class="declaration">proc </aside>make_datum_references_lists<aside>() 
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/code/__HELPERS/global_lists.dm#L5">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;global_lists.dm 5"/></a></aside>
+        </h3>
+        <p>Initial Building</p><h3 id="proc/md5asfile"><aside class="declaration">proc </aside>md5asfile<aside>(file) 
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/code/__HELPERS/files.dm#L83">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;files.dm 83"/></a></aside>
+        </h3>
+        <p>Save file as an external file then md5 it.
+Used because md5ing files stored in the rsc sometimes gives incorrect md5 results.</p><h3 id="proc/md5filepath"><aside class="declaration">proc </aside>md5filepath<aside>(path) 
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/code/__HELPERS/files.dm#L78">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;files.dm 78"/></a></aside>
+        </h3>
+        <p>Returns the md5 of a file at a given path.</p><h3 id="proc/pick_n_take"><aside class="declaration">proc </aside>pick_n_take<aside>(/list/L) 
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/code/__HELPERS/_lists.dm#L242">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 242"/></a></aside>
+        </h3>
+        <p>Pick a random element from the list and remove it from the list.</p><h3 id="proc/recursive_organ_check"><aside class="declaration">proc </aside>recursive_organ_check<aside>(/atom/O) 
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/code/__HELPERS/game.dm#L186">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;game.dm 186"/></a></aside>
+        </h3>
+        <ul>
+<li>recursive_organ_check</li>
+<li>inputs: O (object to start with)</li>
+<li>outputs:</li>
+<li>description: A pseudo-recursive loop based off of the recursive mob check, this check looks for any organs held</li>
+<li>within 'O', toggling their frozen flag. This check excludes items held within other safe organ</li>
+<li>storage units, so that only the lowest level of container dictates whether we do or don't decompose</li>
+</ul><h3 id="proc/simple_network_name_fix"><aside class="declaration">proc </aside>simple_network_name_fix<aside>(name) 
+        
+    
+            <a href="https://github.com/Jujumatic/HippiestationNew/blob/c4dec63171955004260a3e1ebcccb3fbb86285bc/code/__DEFINES/networks.dm#L57">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__DEFINES&#x2F;networks.dm 57"/></a></aside>
+        </h3>
+        <p>Network name should be all caps and no punctuation except for _ and . between domains
+This does a quick an dirty fix to a network name to make sure it works</p></main>
+<footer>
+    hippiestation.dme
+    <a href="https://github.com/Jujumatic/HippiestationNew/tree/c4dec63171955004260a3e1ebcccb3fbb86285bc">c4dec63</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.3.0</a></footer>
+</body>
+</html>
